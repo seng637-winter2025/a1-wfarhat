@@ -1,0 +1,309 @@
+﻿Summary,Issue key,Issue id,Issue Type,Status,Project key,Project name,Project type,Project lead,Project lead id,Project description,Priority,Resolution,Assignee,Assignee Id,Reporter,Reporter Id,Creator,Creator Id,Created,Updated,Last Viewed,Resolved,Due date,Votes,Description,Environment,Watchers,Watchers Id,Original estimate,Remaining Estimate,Time Spent,Work Ratio,Σ Original Estimate,Σ Remaining Estimate,Σ Time Spent,Security Level,Custom field (Actual end),Custom field (Actual start),Custom field (Change reason),Custom field (Change risk),Custom field (Change type),Custom field (Development),Custom field (Epic Color),Custom field (Epic Name),Custom field (Epic Status),Custom field (Goals),Custom field (Impact),Custom field (Issue color),Custom field (Locked forms),Custom field (Open forms),Custom field (Project overview key),Custom field (Project overview status),Custom field (Rank),Custom field (Request Type),Custom field (Sentiment),Custom field (Start date),Custom field (Story Points),Custom field (Story point estimate),Custom field (Submitted forms),Custom field (Target end),Custom field (Target start),Custom field (Team),Custom field (Total forms),Custom field (Vulnerability),Custom field ([CHART] Date of First Response),Custom field ([CHART] Time in Status),Comment,Status Category,Status Category Changed
+Inquiry Transaction Fails to Record Correct Details in System Log,A1G2-15,10025,Bug,To Do,A1G2,Assignment #1 group 27,software,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,,High,,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,03/Feb/25 9:52 PM,03/Feb/25 9:52 PM,03/Feb/25 9:59 PM,,,0,"*Feature Under Test:* Legitimate Inquiry Transaction
+
+*System’s Initial Condition:*
+The ATM is active and displaying the menu of available account types.
+
+*Reproduction Steps:*
+
+# Power on the ATM and ensure it’s ready for transactions.
+# Insert a valid card and enter the correct PIN.
+# Select the ""Inquiry"" option from the transaction menu.
+# Choose the ""Checking"" account to view the balance.
+
+*Expected Behavior:*
+
+* The ATM should print a receipt displaying the correct account balance.
+* The transaction should be accurately logged, showing the message sent to the bank and the corresponding approval response.
+
+*Observed Behavior:*
+
+* While the receipt correctly shows the account balance, the system log fails to record the transaction accurately.
+* Missing or incomplete details related to the transaction message and approval response are observed in the log.
+
+*Status:*
+Pending correction.",1.0,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,,,,,,,,,,,,,,,,,,,,,,,,,0|i0004v:,,,,,,,,,,,,,,,To Do,03/Feb/25 9:52 PM
+ Insufficient Balance Error Displayed During Withdrawal from Checking Account Despite Sufficient Funds,A1G2-14,10024,Bug,Done,A1G2,Assignment #1 group 27,software,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,,Medium,Done,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,03/Feb/25 9:42 PM,03/Feb/25 9:52 PM,,03/Feb/25 9:42 PM,,0,"*Feature Under Test:* Withdrawal on Checking Account
+
+*System’s Initial Condition:*
+The ATM is powered on, with a valid card inserted, and the user successfully logged in.
+
+*Reproduction Steps:*
+
+# Turn on the ATM and insert a valid card.
+# Enter the correct PIN to log in.
+# Select the ""Withdrawal"" option from the main menu.
+# Choose the ""Checking"" account as the source of funds.
+# Enter an amount to withdraw that is within the available balance.
+
+*Expected Behavior:*
+The system should process the transaction successfully, and the specified amount should be withdrawn from the checking account without any errors.
+
+*Observed Behavior:*
+An ""Insufficient Balance"" error appears, even when the checking account has enough funds to cover the withdrawal amount.
+
+*Status:*
+Fixed 1.1",1.0,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,,,,,,,,,,,,,,,,,,,,,,,,,0|i0004n:,,,,,,,,,,,,,10008_*:*_1_*:*_0_*|*_10006_*:*_1_*:*_266,,Done,03/Feb/25 9:42 PM
+ Entering an Extremely Long PIN Causes GUI Freeze and Throws NumberFormatException,A1G2-13,10023,Bug,To Do,A1G2,Assignment #1 group 27,software,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,,Low,,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,03/Feb/25 9:40 PM,03/Feb/25 9:40 PM,,,,0,"*Feature Under Test:* Session
+
+*System’s Initial Condition:*
+The ATM has just been powered on and is ready for transactions.
+
+*Reproduction Steps:*
+
+# Power on the ATM and ensure it has a valid number of bills.
+# Insert a valid card into the ATM.
+# Enter an excessively long number as the PIN.
+
+*Expected Behavior:*
+The system should validate the PIN and display a failure message stating ""Invalid Card/PIN"" if the entered PIN is invalid.
+
+*Observed Behavior:*
+
+* The ATM’s GUI freezes after entering a long PIN.
+* A {{java.lang.NumberFormatException}} is thrown on the command line.
+* The system becomes unresponsive, requiring a restart to recover.
+
+*Status:*
+Pending correction.",1.0,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,,,,,,,,,,,,,,,,,,,,,,,,,0|i0004f:,,,,,,,,,,,,,,,To Do,03/Feb/25 9:40 PM
+ATM Fails to Print Accurate Receipt and Log Transaction Correctly After Deposit,A1G2-11,10021,Bug,To Do,A1G2,Assignment #1 group 27,software,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,,High,,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,03/Feb/25 9:38 PM,03/Feb/25 9:52 PM,,,,0,"*Feature Under Test:* Legitimate Deposit Transaction
+
+*System’s Initial Condition:*
+The ATM is active and prompting the customer to insert a deposit envelope.
+
+*Reproduction Steps:*
+
+# Begin a deposit transaction on the ATM.
+# Insert an envelope as instructed by the system.
+
+*Expected Behavior:*
+
+* The ATM should accept the envelope without issues.
+* A receipt should be printed, accurately reflecting the deposited amount and the updated account balance.
+* The transaction should be properly recorded in the system log, including the message sent to the bank, the approval response, and confirmation of envelope acceptance.
+
+*Observed Behavior:*
+
+* The receipt printed does not display the correct deposit amount or updated account balance.
+* The transaction log does not accurately record the transaction details, missing information about the bank message, approval, or envelope acceptance.
+
+*Status:*
+fixed 1.1",1.0,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,,,,,,,,,,,,,,,,,,,,,,,,,0|i00047:,,,,,,,,,,,,,,,To Do,03/Feb/25 9:38 PM
+"ATM Fails to Retain Card After Three Incorrect PIN Attempts, Allows Login on Fourth Attempt",A1G2-10,10020,Bug,To Do,A1G2,Assignment #1 group 27,software,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,,High,,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,03/Feb/25 9:35 PM,03/Feb/25 9:52 PM,,,,0,"*Feature Under Test:* Retain Card Functionality
+
+*System’s Initial Condition:*
+The ATM is powered on, idle, and ready for user interaction.
+
+*Reproduction Steps:*
+
+# Insert a valid card into the ATM.
+# Enter an incorrect PIN three consecutive times.
+# After the third failed attempt, select ""Click to Insert Card"" to initiate a new session.
+# Reinsert the same card and enter the correct PIN.
+
+*Expected Behavior:*
+The ATM should retain the card after three consecutive incorrect PIN attempts. The user should be unable to log in, and the system should prompt the user to contact their bank to retrieve the retained card.
+
+*Observed Behavior:*
+The ATM does not retain the card after three incorrect PIN attempts. Instead, the user is able to reinsert the card, enter the correct PIN, and successfully log in.
+
+*Status:*
+Pending correction.",1.0,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,,,,,,,,,,,,,,,,,,,,,,,,,0|i0003z:,,,,,,,,,,,,,,,To Do,03/Feb/25 9:35 PM
+ATM Becomes Unresponsive to Keyboard Inputs After Showing and Hiding Log,A1G2-9,10019,Bug,To Do,A1G2,Assignment #1 group 27,software,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,,High,,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,03/Feb/25 9:24 PM,03/Feb/25 9:25 PM,,,,0,"*Feature Under Test:* Keyboard Prompts for ATM
+
+*System’s Initial Condition:*
+The ATM is powered on, idle, with a valid card inserted and the user successfully logged in.
+
+*Reproduction Steps:*
+
+# Turn on the ATM and insert a valid card.
+# Enter the correct PIN to log in.
+# Access the system log by selecting the ""Show Log"" option.
+# Hide the log by selecting the ""Hide Log"" option.
+# Attempt to interact with the system using the keyboard.
+
+*Expected Behavior:*
+The system should respond normally to keyboard inputs, allowing the user to proceed with transactions as expected.
+
+*Observed Behavior:*
+The system becomes unresponsive to all keyboard inputs after the log is hidden. The user must rely on the virtual ATM buttons to continue interacting with the system.
+
+*Status:*
+Pending correction.",1.0,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,,,,,,,,,,,,,,,,,,,,,,,,,0|i0003r:,,,,,,,,,,,,,,,To Do,03/Feb/25 9:24 PM
+Savings Account Option Missing from Account Selection Menu During Inquiry,A1G2-8,10018,Bug,Done,A1G2,Assignment #1 group 27,software,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,,High,Done,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,03/Feb/25 9:21 PM,03/Feb/25 9:26 PM,03/Feb/25 9:25 PM,03/Feb/25 9:26 PM,,0,"*Feature Under Test:* Account Selection for Inquiry Transactions
+
+*System’s Initial Condition:*
+The ATM is active and displaying the transaction types menu.
+
+*Reproduction Steps:*
+
+# Power on the ATM and ensure it is ready for transactions.
+# From the transaction types menu, select the ""Inquiry"" option.
+
+*Expected Behavior:*
+The system should display a menu with all available account types, including:
+
+* Checking
+* Savings
+* Money Market
+
+*Observed Behavior:*
+The system only displays two account options:
+
+* Checking
+* Money Market
+
+The ""Savings"" account option is missing from the list.
+
+*Status:*
+Done",1.0,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,,,,,,,,,,,,,,,,,,,,,,,,,0|i0003j:,,,,,,,,,,,,,10008_*:*_1_*:*_0_*|*_10006_*:*_1_*:*_302667,,Done,03/Feb/25 9:26 PM
+ATM Withdrawal Prompt Missing Dollar Sign for $60 Option,A1G2-7,10017,Bug,Done,A1G2,Assignment #1 group 27,software,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,,Low,Done,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,03/Feb/25 9:19 PM,03/Feb/25 9:26 PM,03/Feb/25 9:26 PM,03/Feb/25 9:26 PM,,0,"*Feature Under Test:* User Prompts
+
+*System’s Initial Condition:*
+The ATM is powered on, idle, and a valid card has been inserted with the user successfully logged in.
+
+*Reproduction Steps:*
+
+# Start the ATM and insert a valid card.
+# Enter the correct PIN to log in.
+# Choose the ""Withdrawal"" option from the main menu.
+# Select any available account type.
+
+*Expected Behavior:*
+The ATM should display the withdrawal options in the following format:
+
+* $60
+
+*Observed Behavior:*
+The ATM displays the withdrawal options as:
+
+* 60
+
+*Status:*
+fixed version 1.1",1.1,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,,,,,,,,,,,,,,,,,,,,,,,,,0|i0003b:,,,,,,,,,,,,,10008_*:*_1_*:*_0_*|*_10006_*:*_1_*:*_416415,,Done,03/Feb/25 9:26 PM
+Transaction Completion Message is Cut Off Due to Display Resolution and Scaling Issues,A1G2-6,10016,Bug,To Do,A1G2,Assignment #1 group 27,software,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,,Low,,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,03/Feb/25 9:14 PM,03/Feb/25 9:27 PM,03/Feb/25 9:26 PM,,,0,"*Feature Under Test:* Session
+
+*System’s Initial Condition:*
+The ATM is powered on, functioning normally, and has successfully completed a transaction.
+
+*Reproduction Steps:*
+
+# Power on the ATM and load it with valid bills.
+# Insert Card 1 and enter the PIN: 42.
+# Select the “Balance Inquiry” option.
+# Choose the “Checking” account.
+# Observe the transaction completion message, which appears cut off and incomplete.
+# Repeat the process after adjusting the display scaling. Lower scaling settings may reveal the full message.
+
+*Expected Behavior:*
+The message asking if the user would like to perform another transaction should adjust to fit the screen, wrapping text appropriately without cutting off any part of the message.
+
+*Observed Behavior:*
+The message gets truncated, and parts of it are not visible depending on the display resolution and scaling settings.",1.0,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,,,,,,,,,,,,,,,,,,,,,,,,,0|i00033:,,,,,,,,,,,,,,,To Do,03/Feb/25 9:14 PM
+Misspelled and Incomplete Message Displayed After Transaction Completion,A1G2-5,10015,Bug,To Do,A1G2,Assignment #1 group 27,software,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,,Medium,,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,03/Feb/25 9:09 PM,03/Feb/25 9:15 PM,03/Feb/25 9:15 PM,,,0,"*Feature Under Test:* ATM Session Function
+
+*System’s Initial Condition:*
+The ATM is operational, loaded with valid bills, and completes transactions without errors.
+
+*Reproduction Steps:*
+
+# Power on the ATM and ensure it has a valid number of bills.
+# Insert Card 2 and enter PIN: 1234.
+# Select ""Balance Inquiry"" as the transaction option.
+# Choose the ""Checking"" account.
+# After the transaction is processed, observe the message displayed.
+
+*Expected Behavior:*
+The system should display the complete message: “Would you like to do another transaction?”
+
+*Observed Behavior:*
+The message appears as: “Wood you like to do another transactio,” with ""Would"" misspelled as ""Wood"" and the word ""transaction"" cut off before completion.
+
+*Status:*
+Pending correction.",1.0,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,,,,,,,,,,,,,,,,,,,,,,,,,0|i0002v:,,,,,,,,,,,,,,,To Do,03/Feb/25 9:09 PM
+ ATM Dispenses Incorrect Cash Amounts for Withdrawals,A1G2-4,10014,Bug,Done,A1G2,Assignment #1 group 27,software,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,,High,Done,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,03/Feb/25 9:02 PM,03/Feb/25 9:07 PM,03/Feb/25 9:04 PM,03/Feb/25 9:02 PM,,0,"*Feature Under Test:* ATM Withdrawal Function
+
+*System’s Initial Condition:*
+The ATM is powered on with a valid number of bills loaded. The user inserts Card 2 and selects the Withdrawal option from the menu, choosing to withdraw $60.
+
+*Reproduction Steps:*
+
+# Turn on the ATM and ensure a valid number of bills are inserted.
+# Insert Card 2 and enter the PIN: 1234.
+# Select the ""Withdrawal"" option from the ATM menu.
+# Choose to withdraw $60.
+
+*Expected Behavior:*
+The ATM should dispense exactly $60 as requested.
+
+*Observed Behavior:*
+Instead of dispensing $60, the ATM dispenses $100. Similar discrepancies occur for other withdrawal amounts, where the dispensed cash does not match the requested amount.
+
+*Status:*
+Issue fixed in version 1.1.",1.0,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,,,,,,,,,,,,,,,,,,,,,,,,,0|i0002n:,,,,,,,,,,,,,10008_*:*_1_*:*_0_*|*_10006_*:*_1_*:*_265,,Done,03/Feb/25 9:02 PM
+"ATM Dispenses Incorrect Cash, Prints Inaccurate Receipts, and Fails to Log Transactions Correctly",A1G2-3,10013,Bug,Done,A1G2,Assignment #1 group 27,software,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,,High,Done,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,03/Feb/25 8:54 PM,03/Feb/25 9:36 PM,03/Feb/25 9:36 PM,03/Feb/25 9:36 PM,,0,"*Feature Under Test:* Proper Execution of a Legitimate Withdrawal Transaction
+
+*System’s Initial Condition:*
+The ATM is active, displaying the withdrawal amount selection menu.
+
+*Reproduction Steps:*
+
+# From the main menu, select the ""Withdrawal"" option.
+# Choose ""Checking Account"" as the source of funds.
+# Select a withdrawal amount that is available in the ATM and within the account balance limit.
+
+*Expected Behavior:*
+
+* The ATM should dispense the exact cash amount requested.
+* A receipt should be printed, accurately showing the withdrawn amount and the updated account balance.
+* The transaction should be correctly logged in the system, including the message sent to the bank and the approval response received.
+
+*Observed Behavior:*
+
+* The ATM dispenses an incorrect cash amount.
+* The printed receipt shows inaccurate details about the withdrawal and the remaining account balance.
+* The transaction log fails to accurately record transaction details.
+
+*Status:*
+Pending fix.",1.0,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,,,,,,,,,,,,,,,,,,,,,,,,,0|i0002f:,,,,,,,,,,,,,10008_*:*_1_*:*_0_*|*_10006_*:*_1_*:*_2528005,03/Feb/25 8:57 PM;712020:98336e1c-d690-4bce-a4da-7fb49ffba79d;1.0,Done,03/Feb/25 9:36 PM
+The ATM fails to properly validate an invalid card ,A1G2-2,10012,Bug,To Do,A1G2,Assignment #1 group 27,software,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,,High,,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,03/Feb/25 8:44 PM,03/Feb/25 9:23 PM,03/Feb/25 9:44 PM,,,0,"When attempting to insert an invalid card , the ATM incorrectly advances to the PIN entry screen. After entering any random PIN, the system becomes unresponsive and freezes.
+
+*Feature Under Test:* Session Handling
+
+*System’s Initial Condition:* The ATM is prompting the user to insert a card.
+
+*Reproduction Steps:*
+
+# Power on the ATM and load it with a valid set of bills.
+# Insert Card 3 (an invalid card).
+# Input any random PIN when prompted.
+
+*Expected Behavior:*
+The system should immediately reject the card, displaying an error message: ""Failure: Invalid Card.""
+
+*Observed Behavior:*
+Instead of flagging the invalid card, the ATM proceeds to the PIN screen. After a random PIN is entered, the system becomes non-functional, freezing completely.",1.0,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,,,,,,,,,,,,,,,,,,,,,,,,,0|i00027:,,,,,,,,,,,,,,,To Do,03/Feb/25 8:44 PM
+Savings Account Balance Inquiry Issues,A1G2-1,10011,Bug,To Do,A1G2,Assignment #1 group 27,software,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,,High,,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,03/Feb/25 8:41 PM,03/Feb/25 8:59 PM,03/Feb/25 8:59 PM,,,0,"*Tested Function:* Balance Inquiry
+
+When using Card 1, which has both checking and savings accounts, selecting the savings account for a balance inquiry initially triggers an unknown error. Surprisingly, the ATM proceeds to dispense $500 in cash. The receipt reflects the savings account balance without any adjustments, despite the cash being dispensed. This transaction is also recorded in the ATM log.
+
+*System’s Initial State:* The ATM displays the account type selection menu.
+
+*Steps to Reproduce:*
+
+# Power on the ATM and load it with a valid number of bills.
+# Insert Card 1 and enter the PIN: 42.
+# Select the transaction type: Balance Inquiry.
+# Choose the savings account (linked to this card).
+
+*Expected Outcome:*
+The ATM should display the current balance of the savings account.
+
+*Actual Outcome:*
+The ATM shows the savings account balance but unexpectedly dispenses $500 in cash. No changes are reflected in the account balance after dispensing the cash.
+
+*ATM Log:*
+
+* *Message:* INQUIRY CARD#1 TRANS#1 FROM 1 NO TO NO AMOUNT
+* *Response:* SUCCESS
+* *Dispensed:* $500.00",1.1,Ahmed Bhatti,712020:98336e1c-d690-4bce-a4da-7fb49ffba79d,,,,,,,,,,,,,,,,,,,,,,,,,0|i0001z:,,,,,,,,,,,,,,03/Feb/25 8:46 PM;712020:98336e1c-d690-4bce-a4da-7fb49ffba79d;1.1,To Do,03/Feb/25 8:41 PM
